@@ -82,4 +82,14 @@
 
 @import "layouts/layouts"; // 1
 
+
+// Overrides for Chinchar Maloney Retail Theme
+// -----------------------------------------------------------------------------
+//
+// 1. Stencil design layout files (example: Header or Footer).
+//
+// -----------------------------------------------------------------------------
+
+@import "../../../cm-retail/assets/scss/layouts/layouts"; // 1
+
 @import "vendor/jstree/style";
