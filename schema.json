@@ -134,6 +134,11 @@
         "id": "headings-font",
         "options": [
           {
+            "group": "Libre Baskerville",
+            "label": "Libre Baskerville",
+            "value": "Google_Libre+Baskerville_400"
+          },
+          {
             "group": "Montserrat",
             "label": "Montserrat",
             "value": "Google_Montserrat_400"
