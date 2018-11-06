@@ -318,10 +318,10 @@
 
     &.is-open {
         // scss-lint:disable ImportantRule
-        left: 0 !important; // 1
+        left: unset !important; // 1
         outline: none;
         right: 0 !important; // 1
-        width: 100% !important;
+        width: 100vw !important;
         z-index: zIndex("high");
     }
 
