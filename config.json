@@ -41,7 +41,7 @@
     "Firefox ESR"
   ],
   "settings": {
-    "homepage_new_products_count": 5,
+    "homepage_new_products_count": 4,
     "homepage_featured_products_count": 4,
     "homepage_top_products_count": 4,
     "homepage_show_carousel": true,
@@ -187,6 +187,7 @@
     "alert-color-alt": "#ffffff",
     "storeName-color": "#333333",
     "body-bg": "#ffffff",
+    "body-alt-bg": "#f4f4f4",
     "header-backgroundColor": "#ffffff",
     "footer-backgroundColor": "#f4f4f4",
     "navUser-color": "#333333",
