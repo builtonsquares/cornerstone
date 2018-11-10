@@ -20,6 +20,10 @@
 .card-figure {
     margin: $card-figure-marginTop;
     position: relative;
+    // scss-lint:disable NestingDepth
+    //.card-figcaption {
+    //    opacity: 1;
+    //}
     &:hover {
 
         // scss-lint:disable NestingDepth
@@ -49,7 +53,11 @@
 .card-figcaption-body {
     display: $card-figcaption-body-display;
     pointer-events: all; // 1
-    transform: translate3d(0, -50%, 0); // 2
+    transform: none; // 2
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    right: 0;
 }
 
 .card-image {
@@ -88,6 +96,9 @@
     border: $card-figcaption-button-border;
     display: $card-figcaption-button-display;
     margin: $card-figcaption-button-margin;
+    border-radius: 0;
+    background: linear-gradient(360deg, rgba(255,255,255,1) 25%, rgba(244,244,244,1) 100%);
+    background-color: stencilColor("body-alt-bg");
 
     &:active {
         background-color: $card-figcaption-button-backgroundHover;

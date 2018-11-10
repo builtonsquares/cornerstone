@@ -21,8 +21,7 @@
 
     .product {
         @include grid-column(6, $float: none);
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding: 0;
         display: flex;
         font-size: fontSize("base"); // 1
         vertical-align: top;
