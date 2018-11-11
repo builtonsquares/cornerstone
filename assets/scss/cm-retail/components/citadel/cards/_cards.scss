@@ -53,11 +53,11 @@
 .card-figcaption-body {
     display: $card-figcaption-body-display;
     pointer-events: all; // 1
-    transform: none; // 2
+    transform: translate3d(-50%, 0, 0); // 2
     position: absolute;
     top: unset;
     bottom: 0;
-    right: 0;
+    left: 50%;
 }
 
 .card-image {
