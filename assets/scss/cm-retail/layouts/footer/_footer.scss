@@ -12,6 +12,33 @@
 //
 // -----------------------------------------------------------------------------
 
+.eapps-instagram-feed-title {
+    text-align: left !important;
+    font-family: $fontFamily-headings !important;
+    font-weight: 400 !important;
+    padding: 20px 0 !important;
+    color: #444444 !important;
+    line-height: 25px !important;
+    font-size: 25px !important;
+}
+
+.eapps-instagram-feed-posts {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.eui-slider {
+    overflow: unset !important;
+}
+
+.eapps-instagram-feed-posts-view.eui-slider-slide {
+    height: 100% !important;
+}
+
+.eapps-instagram-feed-posts-slider-inner {
+    flex-wrap: wrap !important;
+}
+
 .footer {
     background-color: $footer-background;
     border-top: 0;
