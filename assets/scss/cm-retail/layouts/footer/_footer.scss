@@ -22,21 +22,8 @@
     font-size: 25px !important;
 }
 
-.eapps-instagram-feed-posts {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.eui-slider {
-    overflow: unset !important;
-}
-
-.eapps-instagram-feed-posts-view.eui-slider-slide {
-    height: 100% !important;
-}
-
-.eapps-instagram-feed-posts-slider-inner {
-    flex-wrap: wrap !important;
+.eapps-instagram-feed-posts-grid-load-more-container {
+    display: none !important;
 }
 
 .footer {
@@ -85,6 +72,9 @@
 }
 
 .footer-info-col--half {
+    &:first-child {
+        padding-right: 3rem;
+    }
     @include breakpoint("medium") {
         width: width("6/12");
     }

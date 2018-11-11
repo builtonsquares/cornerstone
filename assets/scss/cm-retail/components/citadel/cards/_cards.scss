@@ -126,8 +126,9 @@
 // -----------------------------------------------------------------------------
 
 .card--alternate {
-    border: 3px solid stencilColor("card--alternate-borderColor");
+    border: 0;
     transition: all 0.15s ease;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 75%);
 
     .card-body {
         background-color: stencilColor("card--alternate-backgroundColor");
@@ -140,19 +141,19 @@
     }
 
     &:hover {
-        border-color: stencilColor("color-primary");
+        border-color: stencilColor("card--alternate-backgroundColor");
 
         // scss-lint:disable SelectorDepth, NestingDepth
         .card-body {
-            background-color: stencilColor("color-primary");
+            background-color: stencilColor("card--alternate-backgroundColor");
 
             .card-text {
-                color: stencilColor("card--alternate-color--hover");
+                color: inherit;
             }
         }
 
         .card-title > a {
-            color: stencilColor("card--alternate-color--hover");
+            color: inherit;
         }
     }
 }
