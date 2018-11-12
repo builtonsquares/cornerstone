@@ -143,6 +143,7 @@
 .footer-info-list {
     list-style: none;
     margin-left: 0;
+    columns: 2;
 
     @include breakpoint("medium") {
         columns: 2;

@@ -18,6 +18,15 @@
     margin-bottom: spacing("double");
     overflow-y: scroll;
     height: 1300px;
+    position: relative;
+}
+
+.productView-images--scroll {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 }
 
 .productView-image {

@@ -20,7 +20,7 @@
     flex-wrap: wrap;
 
     .product {
-        @include grid-column(6, $float: none);
+        @include grid-column(12, $float: none);
         padding: 0;
         display: flex;
         font-size: fontSize("base"); // 1

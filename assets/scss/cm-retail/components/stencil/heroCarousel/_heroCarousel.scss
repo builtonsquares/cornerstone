@@ -69,6 +69,8 @@
     }
 }
 
+
+
 .heroCarousel-slide {
     position: relative;
     a {
@@ -76,6 +78,7 @@
     }
 
     .heroCarousel-image {
+        max-height: remCalc(900px);
         @include breakpoint("medium") {
             object-fit: cover; // 1
             max-height: remCalc(900px);

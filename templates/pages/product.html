@@ -20,7 +20,7 @@ product:
         {{> components/products/product-view schema=true}}
 
         {{#if product.videos.list.length}}
-            {{> components/products/videos product.videos}}
+            {{> components/products/videos product.videos videosOpen=theme_settings.product_videos_open}}
         {{/if}}
 
         {{#all settings.show_product_reviews (if theme_settings.show_product_reviews_tabs '!==' true)}}
