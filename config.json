@@ -1,6 +1,6 @@
 {
   "name": "CM-Retail-2018",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -92,8 +92,8 @@
     "default_image_brand": "/assets/img/ProductDefault.png",
     "default_image_product": "/assets/img/ProductDefault.png",
     "default_image_gift_certificate": "/assets/img/GiftCertificate.png",
-    "body-font": "Google_Source+Sans+Pro_400",
-    "headings-font": "Google_Libre+Baskerville_400",
+    "body-font": "Google_Spectral_400",
+    "headings-font": "Google_Playfair+Display_400",
     "fontSize-root": 14,
     "fontSize-h1": 28,
     "fontSize-h2": 24,
@@ -111,7 +111,7 @@
     "color-textLink": "#333333",
     "color-textLink--hover": "#757575",
     "color-textLink--active": "#757575",
-    "color-textHeading": "#444444",
+    "color-textHeading": "#6d6d6d",
     "color-primary": "#757575",
     "color-primaryDark": "#666666",
     "color-primaryDarker": "#333333",
