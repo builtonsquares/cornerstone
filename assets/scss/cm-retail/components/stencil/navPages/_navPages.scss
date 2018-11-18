@@ -48,7 +48,7 @@
     z-index: zIndex("lower");
 
     @include breakpoint("medium") {
-        background: transparent;
+        background-color: $navPages-backgroundColor;
         display: block;
         height: auto;
         padding: 0;
@@ -85,6 +85,10 @@
 
     ul {
         list-style: none;
+
+        @include breakpoint("medium") {
+            margin-left: 14px;
+        }
     }
 
     .navPage-subMenu-list {
@@ -190,15 +194,15 @@
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
-    font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
+    font-size: fontSize("base");
+    font-weight: fontWeight("normal");
     padding: spacing("half") 0;
     text-decoration: none;
     text-transform: uppercase;
 
     @include breakpoint("medium") {
         display: inline-block;
-        padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
+        padding: (spacing("half") + spacing("quarter")) spacing("half") (spacing("half") + spacing("quarter"));
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");

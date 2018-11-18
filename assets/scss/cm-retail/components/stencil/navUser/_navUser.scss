@@ -37,6 +37,12 @@
         z-index: zIndex("high");
     }
 
+    ul {
+        @include breakpoint("medium") {
+            margin-right: 14px;
+        }
+    }
+
     .dropdown-menu {
         background-color: stencilColor("navUser-dropdown-backgroundColor");
         border: 1px solid stencilColor("navUser-dropdown-borderColor");

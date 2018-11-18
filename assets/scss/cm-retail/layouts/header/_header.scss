@@ -49,7 +49,7 @@
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double")) auto (spacing("base"));
+        margin: (spacing("base") * 2) auto (spacing("base") * 2);
         padding: 0;
 
         .header.fixed & {
@@ -170,7 +170,7 @@
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
 
     @include breakpoint("medium") {
-        max-height: 8rem;
+        max-height: 7rem;
     }
 }
 

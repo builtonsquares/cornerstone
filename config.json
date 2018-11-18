@@ -1,6 +1,6 @@
 {
-  "name": "Cornerstone",
-  "version": "2.5.1",
+  "name": "CM-Retail-2018",
+  "version": "0.1.0",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -96,7 +96,7 @@
     "headings-font": "Google_Libre+Baskerville_400",
     "fontSize-root": 14,
     "fontSize-h1": 28,
-    "fontSize-h2": 25,
+    "fontSize-h2": 24,
     "fontSize-h3": 22,
     "fontSize-h4": 20,
     "fontSize-h5": 15,
@@ -199,7 +199,7 @@
     "navUser-dropdown-borderColor": "#cccccc",
     "navUser-indicator-backgroundColor": "#333333",
     "navPages-color": "#333333",
-    "navPages-color-hover": "#757575",
+    "navPages-color-hover": "#bd7b5b",
     "navPages-subMenu-backgroundColor": "#f4f4f4",
     "navPages-subMenu-separatorColor": "#cccccc",
     "dropdown--quickSearch-backgroundColor": "#f4f4f4",

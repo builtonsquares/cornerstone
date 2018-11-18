@@ -17,7 +17,7 @@
 .productView-images {
     margin-bottom: spacing("double");
     overflow-y: scroll;
-    height: 1300px;
+    max-height: 1300px;
     position: relative;
 }
 
@@ -184,6 +184,16 @@
 // Details - Product price
 // -----------------------------------------------------------------------------
 
+.productView-price-info-wrapper {
+    background-image: url("../img/klarna-2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+
+    a {
+        text-decoration: none;
+    }
+}
 .productView-price {
     font-size: fontSize("smaller");
     margin-bottom: spacing("third");
