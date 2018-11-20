@@ -139,7 +139,7 @@
 .productView-product {
     @include breakpoint("medium") {
         border-bottom: container("border");
-        padding-bottom: spacing("single") + spacing("third");
+        padding-bottom: spacing("base");
     }
 
     > :last-child {
@@ -189,6 +189,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: right;
+    min-height: 140px;
+
+    @include breakpoint("medium") {
+        min-height: 200px;
+    }
 
     a {
         text-decoration: none;

@@ -134,7 +134,7 @@
                 {{/unless}}
                 {{#if show_compare}}
                     <label class="button card-figcaption-button" for="compare-{{id}}">
-                        {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
+                        <i class="fas fa-balance-scale"></i> <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
                     </label>
                 {{/if}}
                 {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
