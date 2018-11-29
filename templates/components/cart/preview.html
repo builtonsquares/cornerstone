@@ -1,3 +1,5 @@
+{{!--
+<!--
 <div class="modal-header">
     <h2 class="modal-header-title">
         {{lang 'cart.added_to_cart.what_next' num_products=cart.quantity}}
@@ -8,11 +10,159 @@
     <div class="previewCart">
         <section class="previewCartCheckout">
             {{#if cart.show_primary_checkout_button}}
-                <a href="{{urls.checkout.single_address}}" class="button button--primary">
+                <a href="{{urls.checkout.single_address}}" class="button button&#45;&#45;primary">
                     {{lang 'cart.added_to_cart.proceed_to_checkout'}}
                 </a>
             {{/if}}
 
+            <div class="previewCartCheckout-additionalCheckoutButtons">
+                {{#each cart.additional_checkout_buttons}}
+                    {{{this}}}
+                {{/each}}
+            </div>
+
+            {{#if cart.show_multiple_address_shipping}}
+                <div class="previewCartAction-checkoutMultiple">
+                    <a href="{{urls.checkout.multiple_address}}">
+                        {{lang 'cart.preview.checkout_multiple'}}
+                    </a>
+                </div>
+            {{/if}}
+
+            <div class="previewCartCheckout-subtotal">
+                {{lang 'cart.added_to_cart.order_subtotal'}}
+
+                <strong class="previewCartCheckout-price">
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                        {{cart.sub_total.formatted}}
+                    {{else}}
+                        {{> components/common/login-for-pricing}}
+                    {{/or}}
+                </strong>
+            </div>
+
+            <p data-cart-quantity="{{cart.quantity}}">
+                {{lang 'cart.added_to_cart.your_cart_contains' num_products=cart.quantity}}
+            </p>
+
+            <a href="#" class="button button&#45;&#45;primary" role="button" data-reveal-close>
+                {{lang 'cart.added_to_cart.continue_shopping'}}
+            </a>
+
+            <a href="{{urls.cart}}" class="button">
+                {{lang 'cart.added_to_cart.view_or_edit_cart'}}
+            </a>
+        </section>
+        <section class="productView">
+            {{#with cart.added_item}}
+                <figure class="productView-image">
+                    <div class="productView-img-container">
+                        <img class="productView-image&#45;&#45;cart lazyload"
+                            data-sizes="auto"
+                            src="{{cdn 'img/loading.svg'}}"
+                            data-src="{{getImage image 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                            alt="{{image.alt}}"
+                            title="{{image.alt}}" />
+                    </div>
+                </figure>
+
+                <div class="productView-details">
+                    <h4 class="productView-title">
+                        {{name}}
+                    </h4>
+
+                    <div class="productView-brand">
+                        {{brand.name}}
+                    </div>
+
+                    <div class="productView-price">
+                        {{#or ../customer (if ../theme_settings.restrict_to_login '!==' true)}}
+                            {{quantity}} &times; {{price.formatted}}
+                        {{else}}
+                            {{> components/common/login-for-pricing}}
+                        {{/or}}
+                    </div>
+
+                    {{#each configurable_fields}}
+                        <dl class="productView-info">
+                            <dt class="productView-info-name">
+                                {{name}}
+                            </dt>
+                            {{#if is_file}}
+                                <a href="/viewfile.php?prodfield={{../id}}&cartitem={{../../id}}">{{{value}}}</a>
+                            {{else}}
+                                {{{value}}}
+                            {{/if}}
+                        </dl>
+                    {{/each}}
+
+                    {{#each options}}
+                        <dl class="productView-info">
+                            <dt class="productView-info-name">
+                                {{name}}
+                            </dt>
+                            <dd class="productView-info-value">
+                                {{value}}
+                            </dd>
+                        </dl>
+                    {{/each}}
+                </div>
+            {{/with}}
+        </section>
+    </div>
+
+    {{#if cart.suggested_products}}
+        <section class="suggestiveCart">
+            <h4>
+                {{lang 'cart.added_to_cart.you_might_also_like'}}&hellip;
+            </h4>
+
+            <ul class="productGrid">
+                {{#each cart.suggested_products}}
+                    <li class="product">
+                        {{> components/products/card hide_product_quick_view=true theme_settings=../theme_settings}}
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+    {{/if}}
+</div>
+-->
+--}}
+
+<div class="modal-header">
+    <h2 class="modal-header-title">
+        {{lang 'cart.added_to_cart.what_next' num_products=cart.quantity}}
+    </h2>
+</div>
+
+<div class="modal-body">
+    <div class="previewCart">
+        {{!--Bolt Addition--}}
+        <script
+            id="bolt-connect"
+            type="text/javascript"
+            src="https://connect.bolt.com/connect-bigcommerce.js"
+            data-publishable-key="Wraq_KDgUVug.mH--y6c3exkB.f4cf1326f8511c3679f964491bc1ad268e4ff579ea29c8b603a3eeb6beed3adc"
+            data-shopping-cart-id="BigCommerce">
+        </script>
+        {{!--Bolt Addition End--}}
+        <section class="previewCartCheckout">
+            {{#if cart.show_primary_checkout_button}}
+                <a href="{{urls.checkout.single_address}}" class="button button--primary">
+                    {{lang 'cart.added_to_cart.proceed_to_checkout'}}
+                </a>
+                {{!--Bolt Addition--}}
+                <div class="bolt-button-wrapper" style="display:none; width:100%">
+                    <div class="bolt-checkout-button with-cards bolt-multi-step-checkout large-width" style="min-width:30%; float:right"></div>
+                </div>
+                {{!--Bolt Addition End--}}
+            {{/if}}
+            {{!--Bolt Addition--}}
+            <a href="{{urls.checkout.single_address}}" class="button button--primary klarna" style="display:none; margin-top:15px">
+                Pay With Klarna
+            </a>
+            {{!--Bolt Addition End--}}
             <div class="previewCartCheckout-additionalCheckoutButtons">
                 {{#each cart.additional_checkout_buttons}}
                     {{{this}}}
@@ -50,6 +200,42 @@
             <a href="{{urls.cart}}" class="button">
                 {{lang 'cart.added_to_cart.view_or_edit_cart'}}
             </a>
+            {{!--Bolt Addition--}}
+            <script type="text/javascript">
+                // Reload Bolt checkout when price changes
+                var config = { childList: true, subtree: true };
+                var totalClassName = "previewCartCheckout-price";
+                var totalPrice = "";
+                var callback = function(mutationsList) {
+                    var elms = document.getElementsByClassName(totalClassName);
+                    if (elms.length == 0) {
+                        return;
+                    }
+                    var newPrice = elms[0].innerHTML;
+                    if (newPrice !== totalPrice && window.BoltCheckout) {
+                        console.log("---- price updated. Reloading checkout...");
+                        window.BoltCheckout.reloadBigCommerceCart();
+                    }
+                    totalPrice = newPrice;
+                };
+                new MutationObserver(callback).observe(document.body, config);
+            </script>
+
+
+            <script type="text/javascript">
+                var primaryButtons = document.querySelector(".previewCartCheckout .button--primary");
+                var boltButtons = document.getElementsByClassName("bolt-button-wrapper");
+                var klarna = document.querySelector(".button.button--primary.klarna");
+                if (true) {
+                    for (var i = 0; i < boltButtons.length; i++) {
+                        boltButtons[i].style.display = 'block';
+                    }
+                    primaryButtons.style.display = 'none';
+                    klarna.style.display = 'inline-block';
+                    console.log("debug mode on. Show bolt button");
+                }
+            </script>
+            {{!--Bolt Addition End--}}
         </section>
         <section class="productView">
             {{#with cart.added_item}}

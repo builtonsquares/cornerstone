@@ -1,4 +1,83 @@
+{{!--
+<!--
 <div class="previewCart">
+    {{#if cart.items.length}}
+        <ul class="previewCartList">
+            {{#each (limit cart.items 4)}}
+                <li class="previewCartItem">
+                    <div class="previewCartItem-image">
+                        {{#if type '==' 'GiftCertificate'}}
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="GiftCertificate" title="GiftCertificate">
+                        {{else}}
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                        {{/if}}
+                    </div>
+
+                    <div class="previewCartItem-content">
+                        <span class="previewCartItem-brand">
+                            {{brand.name}}
+                        </span>
+
+                        <h6 class="previewCartItem-name">
+                            <a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+                        </h6>
+
+                        <span class="previewCartItem-price">
+                            {{#if quantity '>' 1}}
+                                {{quantity}} &times;
+                            {{/if}}
+                            {{#or ../customer (if ../theme_settings.restrict_to_login '!==' true)}}
+                                {{price.formatted}}
+                            {{else}}
+                                {{> components/common/login-for-pricing}}
+                            {{/or}}
+                        </span>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+        <div class="previewCartAction">
+            {{#if cart.show_primary_checkout_button}}
+                <div class="previewCartAction-checkout">
+                    <a href="{{urls.checkout.single_address}}" class="button button&#45;&#45;small button&#45;&#45;primary">
+                        {{lang 'cart.preview.checkout_now'}}
+                    </a>
+                </div>
+            {{/if}}
+
+            <div class="previewCartAction-viewCart{{#unless cart.show_primary_checkout_button}} previewCartAction-viewCart&#45;&#45;sole{{/unless}}">
+                <a href="{{urls.cart}}" class="button button&#45;&#45;small button&#45;&#45;action">
+                    {{lang 'cart.preview.view_cart'}}
+                </a>
+            </div>
+
+            {{#if cart.show_multiple_address_shipping}}
+                <div class="previewCartAction-checkoutMultiple">
+                    <a href="{{urls.checkout.multiple_address}}">
+                        {{lang 'cart.preview.checkout_multiple'}}
+                    </a>
+                </div>
+            {{/if}}
+        </div>
+    {{else}}
+        <div class="previewCart-emptyBody">
+            {{lang 'cart.checkout.empty_cart'}}
+        </div>
+    {{/if}}
+</div>
+-->
+--}}
+
+<div class="previewCart">
+    {{!--Bolt Addition--}}
+    <script
+        id="bolt-connect"
+        type="text/javascript"
+        src="https://connect.bolt.com/connect-bigcommerce.js"
+        data-publishable-key="Wraq_KDgUVug.mH--y6c3exkB.f4cf1326f8511c3679f964491bc1ad268e4ff579ea29c8b603a3eeb6beed3adc"
+        data-shopping-cart-id="BigCommerce">
+    </script>
+    {{!--Bolt Addition End--}}
     {{#if cart.items.length}}
         <ul class="previewCartList">
             {{#each (limit cart.items 4)}}
@@ -40,6 +119,11 @@
                     <a href="{{urls.checkout.single_address}}" class="button button--small button--primary">
                         {{lang 'cart.preview.checkout_now'}}
                     </a>
+                    {{!--Bolt Addition--}}
+                    <div class="bolt-button-wrapper" style="display:none; width:100%; text-align: center;">
+                        <div class="bolt-checkout-button bolt-multi-step-checkout"></div>
+                    </div>
+                    {{!--Bolt Addition End--}}
                 </div>
             {{/if}}
 
@@ -56,6 +140,23 @@
                     </a>
                 </div>
             {{/if}}
+            {{!--Bolt Addition--}}
+            <script type="text/javascript">
+                var primaryButtons = document.querySelector(".previewCartAction .button--primary");
+                var boltButtons = document.getElementsByClassName("bolt-button-wrapper");
+                var action = document.getElementsByClassName("previewCartAction")[0];
+                var view = document.getElementsByClassName("previewCartAction-viewCart")[0]
+                if (true) {
+                    for (var i = 0; i < boltButtons.length; i++) {
+                        boltButtons[i].style.display = 'block';
+                    }
+                    primaryButtons.style.display = 'none';
+                    action.style.display = 'grid';
+                    view.style['justify-self'] = 'center';
+                    console.log("debug mode on. Show bolt button");
+                }
+            </script>
+            {{!--Bolt Addition End--}}
         </div>
     {{else}}
         <div class="previewCart-emptyBody">
