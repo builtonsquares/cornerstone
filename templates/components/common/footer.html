@@ -116,7 +116,9 @@
                         work out of our modest studio in Portland, Oregon. On-site sales and visits to our showroom by
                         appointment only.</span>
                         {{#if settings.phone_number}}
-                            <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
+                            <strong><a href="tel:{{settings.phone_number}}">
+                                {{lang 'footer.call_us' phone_number=settings.phone_number}}
+                            </a></strong>
                         {{/if}}
                     {{/if}}
                 </div>

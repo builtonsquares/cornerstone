@@ -391,6 +391,11 @@
 
     <section class="productView-images" data-image-gallery>
         <div class="productView-images--inner">
+            <div class="productImage-container">
+                <video id="productView-inlineVideo" class="productView-video--default" playsinline muted autoplay loop>
+                    <source src="https://s3-us-west-2.amazonaws.com/cm-product-videos/{{product.sku}}.mp4" type="video/mp4">
+                </video>
+            </div>
         {{#each product.images}}
             <div class="productImage-container">
                 <img class="productView-image--default lazyload"
@@ -464,3 +469,12 @@
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
 </div>
+
+<script>
+    document._video = document.getElementById("productView-inlineVideo");
+
+    document._video.addEventListener('loadeddata',function(){
+        document._video.style.height = "auto";
+        console.log("video loaded");
+    });
+</script>
